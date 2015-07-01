@@ -93,9 +93,13 @@ h1{
 img{
   display:inline;
   margin:5px;
-  border: 1px solid;
+  border: 3px solid gray;
   padding:5px;
   height:250px;
   weight:250px;
   float:left;
+  opacity:0.5;
+}
+img:hover{
+  opacity:1;
 }

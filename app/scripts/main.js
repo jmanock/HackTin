@@ -4,14 +4,15 @@ $(document).ready(function(){
     ~ on mouse over show some stats
       - name, instagram name, bio, userid?
     ~ able to click to enlarge photo
-    ~ some shading that lites up on mouse over
+
       STREACH
       ~ maybe have an option to show all photos or image gallery
       ~ show all json photos?
     */
-  $.getJSON('scripts/newTinder.json', function(data){
+  $.getJSON('scripts/3tinder.json', function(data){
     $.each(data, function(k,value){
       for(var x = 0; x<value.length; x++){
+        console.log(value[x]);
         var insta = value[x].instagram;
         var name = value[x].name;
         var photos = value[x].photos;
