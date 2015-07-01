@@ -6,3 +6,7 @@ bower_components
 test/bower_components
 app/scripts/tinder.json
 app/scripts/hacks.json
+app/scripts/2tinder.json
+app/scripts/newTinder.json
+app/scripts/nodeTime.js
+app/scripts/toTinder.json

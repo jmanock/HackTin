@@ -1,33 +1,42 @@
+
 $(document).ready(function(){
-  $.getJSON('scripts/hacks.json', function(data){
-    $.each(data, function(key, val){
-      // Tinder photo hack
-      for(var i = 0; i<val.length; i++){
-        for(var x = 0; x<val[i].photos.length; x++){
-          //$('body').append($('<img src=' + val[i].photos[x].url + '</img>'));
-          $('div').append($('<li >' + val[i].name +
-          '<img src =' + val[i].photos[x].url + ' height="100" width="100"></img>' + '</li>'));
+  /* GOALS!!!!
+    ~ on mouse over show some stats
+      - name, instagram name, bio, userid?
+    ~ able to click to enlarge photo
+    ~ some shading that lites up on mouse over
+      STREACH
+      ~ maybe have an option to show all photos or image gallery
+      ~ show all json photos?
+    */
+  $.getJSON('scripts/newTinder.json', function(data){
+    $.each(data, function(k,value){
+      for(var x = 0; x<value.length; x++){
+        var insta = value[x].instagram;
+        var name = value[x].name;
+        var photos = value[x].photos;
 
+        if(insta === null || insta === undefined){
+          userPhotos(name, photos);
+        }else{
+          var userName = insta.username;
+          var instaPoto = insta.photos;
+          instaPhotos(userName, instaPoto);
+          userPhotos(name, photos);
         }
-
       }
+    });
+  });
+  userPhotos = function(name, photos){
+    for(var k = 0; k < photos.length; k++){
+      $('body').append($('<img src=' + photos[k].url + '></img>'));
+    }
+  };
 
-      // Instagram hack
-  //     for(var i = 0; i< val.length; i++){
-  //       var insta = val[i].instagram;
-  //       var nme = val[i].name;
-  //       if(insta === null || insta === undefined){
-  //         console.log('nothing here');
-  //       }else{
-  //         for(var x = 0; x<insta.photos.length; x++){
-  //              $('body').append($('<img src=' + insta.photos[x].image + '></img>'));
-  //             //console.log(insta.photos[x].image);
-  //         }
-  //
-  //       }
-  //     }
+  instaPhotos = function(userName, instaPoto){
+    for(var j = 0; j<instaPoto.length; j++){
+    $('body').append($('<img src=' + instaPoto[j].image + '></img>'));
 
-
-     });
-   });
+    }
+  };
 });
