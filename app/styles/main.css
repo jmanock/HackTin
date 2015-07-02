@@ -104,10 +104,14 @@ img:hover{
   opacity:1;
 } */
 
-img{
+ img{
   display:inline;
   border:3px solid gray;
   padding: 5px;
   height:100px;
   weight:100px;
+}
+.large{
+  height:100%;
+  weight:100%;
 }

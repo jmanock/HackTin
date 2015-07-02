@@ -1,8 +1,6 @@
 
 $(document).ready(function(){
   /* GOALS!!!!
-    ~ on mouse over show some stats
-      - name, instagram name, bio, userid?
     ~ able to click to enlarge photo
 
       STREACH
@@ -42,12 +40,13 @@ $(document).ready(function(){
     for(var x = 0; x<photos.length; x++){
       $('body').append($('<img src = ' + photos[x].url + '></img>'));
     }
+
     if(instaGram === null || instaGram === undefined){
       console.log('nothing here');
     }else{
+      $('body').append($('<h3> IG userName: ' + instaGram.username + '</h3>'));
       for(var j = 0; j<instaGram.photos.length; j++){
-        $('body').append($('<p>InstaGram: ' + '<img src= ' + instaGram.photos[j].image + '></img></p>'));
-        console.log(instaGram.photos[j]);
+        $('body').append($( '<img src= ' + instaGram.photos[j].image + '></img>'));
       }
     }
   };
