@@ -12,7 +12,7 @@ $(document).ready(function(){
   $.getJSON('scripts/4tinder.json', function(data){
     $.each(data, function(k,value){
       for(var x = 0; x<value.length; x++){
-        console.log(value[x]);
+      //  console.log(value[x]);
         var insta = value[x].instagram;
         var name = value[x].name;
         var photos = value[x].photos;
@@ -45,9 +45,10 @@ $(document).ready(function(){
     if(instaGram === null || instaGram === undefined){
       console.log('nothing here');
     }else{
-      // for(var j = 0; j<instaGram.length; j++){
-      //   $('body').append($('<img src=' + instaGram.photos[] ))
-      // }
+      for(var j = 0; j<instaGram.photos.length; j++){
+        $('body').append($('<p>InstaGram: ' + '<img src= ' + instaGram.photos[j].image + '></img></p>'));
+        console.log(instaGram.photos[j]);
+      }
     }
   };
 
