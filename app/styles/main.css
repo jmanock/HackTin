@@ -90,7 +90,7 @@ body {
 h1{
   text-align:center;
 }
-img{
+/* img{
   display:inline;
   margin:5px;
   border: 3px solid gray;
@@ -102,4 +102,12 @@ img{
 }
 img:hover{
   opacity:1;
+} */
+
+img{
+  display:inline;
+  border:3px solid gray;
+  padding: 5px;
+  height:100px;
+  weight:100px;
 }
